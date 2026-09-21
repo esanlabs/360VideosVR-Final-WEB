@@ -470,6 +470,11 @@
               animation__start="property: line.start; to: 2.75 1.6 -2.5; dur: 8000; easing: easeOutCubic; delay: 10000"
               animation__end="property: line.end; to: 3.85 1.1 -2.5; dur: 8000; easing: easeOutCubic; delay: 10000">
     </a-entity>
+    <a-entity id="lineaRecorrido"
+              line="start: 3.85 1.1 -15; end: 4.95 1.6 -15; color: #FFFFFF; opacity: 0.6"
+              animation__start="property: line.start; to: 3.85 1.1 -2.5; dur: 8000; easing: easeOutCubic; delay: 10000"
+              animation__end="property: line.end; to: 4.95 1.6 -2.5; dur: 8000; easing: easeOutCubic; delay: 10000">
+    </a-entity>
   </a-entity>
 
   <a-entity id="contenedorBoton" position="-1.65 1.6 -15"
@@ -557,7 +562,7 @@
         <a-text id="textoBotonVideoDirecto" value="Video 360\n1" align="center" baseline="top" width="1.2" wrap-count="12" font="https://cdn.aframe.io/fonts/Roboto-msdf.json" shader="msdf" color="#FFFFFF" position="0 -0.48 0.05"></a-text>
       </a-entity>
 
-        <a-entity id="contenedorBotonYoutube" position="3.85 1.1 -15"
+  <a-entity id="contenedorBotonYoutube" position="3.85 1.1 -15"
           animation="property: position; to: 3.85 1.1 -2.5; dur: 8000; easing: easeOutCubic; delay: 10000">
     <a-ring material="shader: flat; color: #FFFFFF; opacity: 0.85" radius-inner="0.41" radius-outer="0.45" position="0 0 -0.01"></a-ring>
     <a-ring material="shader: flat; color: #E3173E; transparent: true; opacity: 0.5"
@@ -573,12 +578,29 @@
     <a-text value="Video 360\n2" align="center" baseline="top" width="1.2" wrap-count="12" font="https://cdn.aframe.io/fonts/Roboto-msdf.json" shader="msdf" color="#000000" position="0.01 -0.49 0.04"></a-text>
     <a-text id="textoBotonYoutube" value="Video 360\n2" align="center" baseline="top" width="1.2" wrap-count="12" font="https://cdn.aframe.io/fonts/Roboto-msdf.json" shader="msdf" color="#FFFFFF" position="0 -0.48 0.05"></a-text>
   </a-entity>
-  <a-entity id="panelPresentacionEsan" position="1.1 2.82 -15" scale="1 1 1"
-            animation__entrar="property: position; from: 1.1 2.82 -15; to: 1.1 2.82 -2.5; dur: 7000; easing: easeOutCubic; delay: 500">
-    <a-entity geometry="primitive: plane; width: 6.3; height: 0.58" material="shader: flat; color: #1A1A1A; opacity: 0.85; transparent: true"></a-entity>
-    <a-entity geometry="primitive: plane; width: 6.34; height: 0.62" position="0 0 -0.01" material="shader: flat; color: #FFFFFF; opacity: 0.5; transparent: true"></a-entity>
-    <a-image src="#imgDitiLogo" width="0.90" height="0.20" position="-2.65 0 0.03" material="shader: flat; transparent: true; alphaTest: 0.05; opacity: 1"></a-image>
-    <a-image src="#imgEsanLabs" width="0.90" height="0.65" position="2.55 0 0.03" material="shader: flat; transparent: true; alphaTest: 0.05; opacity: 1"></a-image>
+
+  <a-entity id="contenedorBotonRecorrido" position="4.95 1.6 -15"
+            animation="property: position; to: 4.95 1.6 -2.5; dur: 8000; easing: easeOutCubic; delay: 10000">
+    <a-ring material="shader: flat; color: #FFFFFF; opacity: 0.85" radius-inner="0.41" radius-outer="0.45" position="0 0 -0.01"></a-ring>
+    <a-ring material="shader: flat; color: #E3173E; transparent: true; opacity: 0.5"
+            radius-inner="0.46" radius-outer="0.53" position="0 0 -0.02"
+            animation__pulse="property: scale; from: 1 1 1; to: 1.18 1.18 1.18; dur: 2000; loop: true; easing: easeInOutSine; dir: alternate"
+            animation__fade="property: material.opacity; from: 0.5; to: 0; dur: 2000; loop: true; easing: easeInOutSine; dir: alternate">
+    </a-ring>
+    <a-circle id="btnRecorrido" class="clickable" color="#0d0d1a" opacity="0.95" radius="0.4"
+              animation__mouseenter="property: scale; to: 1.2 1.2 1.2; dur: 300; startEvents: mouseenter"
+              animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: mouseleave">
+      <a-circle radius="0.38" canvas-icon="type: tour" material="shader: flat" position="0 0 0.02"></a-circle>
+    </a-circle>
+    <a-text value="Recorrido\nESAN" align="center" baseline="top" width="1.2" wrap-count="12" font="https://cdn.aframe.io/fonts/Roboto-msdf.json" shader="msdf" color="#000000" position="0.01 -0.49 0.04"></a-text>
+    <a-text value="Recorrido\nESAN" align="center" baseline="top" width="1.2" wrap-count="12" font="https://cdn.aframe.io/fonts/Roboto-msdf.json" shader="msdf" color="#FFFFFF" position="0 -0.48 0.05"></a-text>
+  </a-entity>
+  <a-entity id="panelPresentacionEsan" position="1.65 2.82 -15" scale="1 1 1"
+            animation__entrar="property: position; from: 1.65 2.82 -15; to: 1.65 2.82 -2.5; dur: 7000; easing: easeOutCubic; delay: 500">
+    <a-entity geometry="primitive: plane; width: 7.4; height: 0.58" material="shader: flat; color: #1A1A1A; opacity: 0.85; transparent: true"></a-entity>
+    <a-entity geometry="primitive: plane; width: 7.44; height: 0.62" position="0 0 -0.01" material="shader: flat; color: #FFFFFF; opacity: 0.5; transparent: true"></a-entity>
+    <a-image src="#imgDitiLogo" width="0.90" height="0.20" position="-3.20 0 0.03" material="shader: flat; transparent: true; alphaTest: 0.05; opacity: 1"></a-image>
+    <a-image src="#imgEsanLabs" width="0.90" height="0.65" position="3.10 0 0.03" material="shader: flat; transparent: true; alphaTest: 0.05; opacity: 1"></a-image>
     <a-text value="BIENVENIDO AL UNIVERSO ESAN" color="#E3173E" align="center" width="4.6" font="https://cdn.aframe.io/fonts/Roboto-msdf.json" shader="msdf" position="0 0.11 0.02"></a-text>
     <a-text value="Descubre nuestro legado y vive el futuro" color="#DFDFDF" align="center" width="4.0" font="https://cdn.aframe.io/fonts/Roboto-msdf.json" shader="msdf" position="0 -0.13 0.02"></a-text>
   </a-entity>
@@ -663,6 +685,7 @@ const contenedorBtnLabs = document.querySelector('#contenedorBotonLabs');
 const contenedorNuevosLabs = document.querySelector('#contenedorNuevosLabs');
 const contenedorBtnVideoDirecto = document.querySelector('#contenedorBotonVideoDirecto');
 const contenedorBtnYoutube = document.querySelector('#contenedorBotonYoutube');
+const contenedorBtnRecorrido = document.querySelector('#contenedorBotonRecorrido');
 const panelMuyPronto = document.querySelector('#panelMuyPronto');
 let timerProno = null;
 const redNeuronal = document.querySelector('#redNeuronal');
@@ -671,6 +694,7 @@ const lineaLabs = document.querySelector('#lineaLaboratorios');
 const lineaNuevosLabs = document.querySelector('#lineaNuevosLabs');
 const lineaVideoDirecto = document.querySelector('#lineaVideoDirecto');
 const lineaYoutube = document.querySelector('#lineaYoutube');
+const lineaRecorrido = document.querySelector('#lineaRecorrido');
 const textoBoton = document.querySelector('#textoBoton');
 const textoBotonFundador = document.querySelector('#textoBotonFundador');
 const textoBotonLabs = document.querySelector('#textoBotonLabs');
@@ -731,7 +755,7 @@ function iniciarCine(videoSeleccionado) {
   if (timerProno) { clearTimeout(timerProno); timerProno = null; }
   panelMuyPronto.setAttribute('visible', 'false');
   panelMuyPronto.setAttribute('scale', '0 0 0');
-  [contenedorBtn, contenedorBtnFundador, contenedorBtnLabs, contenedorNuevosLabs, contenedorBtnVideoDirecto, contenedorBtnYoutube, redNeuronal, document.querySelector('#panelBienvenida'), skyPrincipal, document.querySelector('#panelPresentacionEsan')].forEach(el => { if(el) el.setAttribute('visible', 'false'); });
+  [contenedorBtn, contenedorBtnFundador, contenedorBtnLabs, contenedorNuevosLabs, contenedorBtnVideoDirecto, contenedorBtnYoutube, contenedorBtnRecorrido, redNeuronal, document.querySelector('#panelBienvenida'), skyPrincipal, document.querySelector('#panelPresentacionEsan')].forEach(el => { if(el) el.setAttribute('visible', 'false'); });
   [skyButacas, oscurecerButacas, grupoCine].forEach(el => el.setAttribute('visible', 'true'));
   oscurecerButacas.emit('luzOff');
 
@@ -763,7 +787,7 @@ function abrirVideoEn360(videoElemento, fuenteEsfera) {
   // Ocultar jardÃ­n
   skyPrincipal.setAttribute('visible', 'false');
   [contenedorBtn, contenedorBtnFundador, contenedorBtnLabs, contenedorNuevosLabs,
-  contenedorBtnVideoDirecto, contenedorBtnYoutube, redNeuronal].forEach(el => { if(el) el.setAttribute('visible', 'false'); });
+  contenedorBtnVideoDirecto, contenedorBtnYoutube, contenedorBtnRecorrido, redNeuronal].forEach(el => { if(el) el.setAttribute('visible', 'false'); });
   const ep = document.querySelector('#panelPresentacionEsan');
   if(ep) ep.setAttribute('visible', 'false');
   if (timerProno) { clearTimeout(timerProno); timerProno = null; }
@@ -797,13 +821,16 @@ function cerrarVideo360() {
   // Restaurar jardÃ­n
   skyPrincipal.setAttribute('visible', 'true');
   [contenedorBtn, contenedorBtnFundador, contenedorBtnLabs, contenedorNuevosLabs,
-   contenedorBtnVideoDirecto, contenedorBtnYoutube, redNeuronal].forEach(el => { if(el) el.setAttribute('visible', 'true'); });
+   contenedorBtnVideoDirecto, contenedorBtnYoutube, contenedorBtnRecorrido, redNeuronal].forEach(el => { if(el) el.setAttribute('visible', 'true'); });
   const ep = document.querySelector('#panelPresentacionEsan');
   if(ep) ep.setAttribute('visible', 'true');
 }
 
 document.querySelector('#btnVideoDirecto').addEventListener('click', abrirVideoDirecto);
 document.querySelector('#btnYoutube').addEventListener('click', abrirVideo360);
+document.querySelector('#btnRecorrido').addEventListener('click', () => {
+  window.open('https://esanlabs.github.io/Esan-Experience-Recorrido-Web/', '_blank', 'noopener,noreferrer');
+});
 document.querySelector('#btnSalirVideo360').addEventListener('click', cerrarVideo360);
 document.querySelector('#btnCerrarProno').addEventListener('click', cerrarPanelProno);
 
@@ -853,8 +880,8 @@ function finalizarVideo() {
     if(videoActual.id === 'video7a') textoBotonNuevosLabs.setAttribute('value', 'Laboratorios\nTech');
 
     const KissAnimacion = [
-      contenedorBtn, contenedorBtnFundador, contenedorBtnLabs, contenedorNuevosLabs, contenedorBtnVideoDirecto, contenedorBtnYoutube,
-      lineaFundador, lineaLabs, lineaNuevosLabs, lineaVideoDirecto, lineaYoutube
+      contenedorBtn, contenedorBtnFundador, contenedorBtnLabs, contenedorNuevosLabs, contenedorBtnVideoDirecto, contenedorBtnYoutube, contenedorBtnRecorrido,
+      lineaFundador, lineaLabs, lineaNuevosLabs, lineaVideoDirecto, lineaYoutube, lineaRecorrido
     ].filter(Boolean);
 
     KissAnimacion.forEach(el => {
@@ -869,14 +896,16 @@ function finalizarVideo() {
     contenedorNuevosLabs.setAttribute('position', '1.65 1.1 -15');
     if(contenedorBtnVideoDirecto) contenedorBtnVideoDirecto.setAttribute('position', '2.75 1.6 -15');
     if(contenedorBtnYoutube) contenedorBtnYoutube.setAttribute('position', '3.85 1.1 -15');
+    if(contenedorBtnRecorrido) contenedorBtnRecorrido.setAttribute('position', '4.95 1.6 -15');
 
     lineaFundador.setAttribute('line', {start: '-1.65 1.6 -15', end: '-0.55 1.1 -15', color: '#FFFFFF'});
     lineaLabs.setAttribute('line', {start: '-0.55 1.1 -15', end: '0.55 1.6 -15', color: '#FFFFFF'});
     lineaNuevosLabs.setAttribute('line', {start: '0.55 1.6 -15', end: '1.65 1.1 -15', color: '#FFFFFF'});
     if(lineaVideoDirecto) lineaVideoDirecto.setAttribute('line', {start: '1.65 1.1 -15', end: '2.75 1.6 -15', color: '#FFFFFF'});
     if(lineaYoutube) lineaYoutube.setAttribute('line', {start: '2.75 1.6 -15', end: '3.85 1.1 -15', color: '#FFFFFF'});
+    if(lineaRecorrido) lineaRecorrido.setAttribute('line', {start: '3.85 1.1 -15', end: '4.95 1.6 -15', color: '#FFFFFF'});
 
-    [contenedorBtn, contenedorBtnFundador, contenedorBtnLabs, contenedorNuevosLabs, contenedorBtnVideoDirecto, contenedorBtnYoutube, redNeuronal, document.querySelector('#panelPresentacionEsan')].forEach(el => { if(el) el.setAttribute('visible', 'true'); });
+    [contenedorBtn, contenedorBtnFundador, contenedorBtnLabs, contenedorNuevosLabs, contenedorBtnVideoDirecto, contenedorBtnYoutube, contenedorBtnRecorrido, redNeuronal, document.querySelector('#panelPresentacionEsan')].forEach(el => { if(el) el.setAttribute('visible', 'true'); });
 
     setTimeout(() => {
       const dur = 6000;
@@ -888,6 +917,7 @@ function finalizarVideo() {
       contenedorNuevosLabs.setAttribute('animation', `property: position; from: 1.65 1.1 -15; to: 1.65 1.1 -2.5; dur: ${dur}; easing: ${ease}`);
       if(contenedorBtnVideoDirecto) contenedorBtnVideoDirecto.setAttribute('animation', `property: position; from: 2.75 1.6 -15; to: 2.75 1.6 -2.5; dur: ${dur}; easing: ${ease}`);
       if(contenedorBtnYoutube) contenedorBtnYoutube.setAttribute('animation', `property: position; from: 3.85 1.1 -15; to: 3.85 1.1 -2.5; dur: ${dur}; easing: ${ease}`);
+      if(contenedorBtnRecorrido) contenedorBtnRecorrido.setAttribute('animation', `property: position; from: 4.95 1.6 -15; to: 4.95 1.6 -2.5; dur: ${dur}; easing: ${ease}`);
 
       lineaFundador.setAttribute('animation__start', `property: line.start; from: -1.65 1.6 -15; to: -1.65 1.6 -2.5; dur: ${dur}; easing: ${ease}`);
       lineaFundador.setAttribute('animation__end', `property: line.end; from: -0.55 1.1 -15; to: -0.55 1.1 -2.5; dur: ${dur}; easing: ${ease}`);
@@ -908,11 +938,16 @@ function finalizarVideo() {
         lineaYoutube.setAttribute('animation__end', `property: line.end; from: 3.85 1.1 -15; to: 3.85 1.1 -2.5; dur: ${dur}; easing: ${ease}`);
       }
 
+      if(lineaRecorrido) {
+        lineaRecorrido.setAttribute('animation__start', `property: line.start; from: 3.85 1.1 -15; to: 3.85 1.1 -2.5; dur: ${dur}; easing: ${ease}`);
+        lineaRecorrido.setAttribute('animation__end', `property: line.end; from: 4.95 1.6 -15; to: 4.95 1.6 -2.5; dur: ${dur}; easing: ${ease}`);
+      }
+
       const ep = document.querySelector('#panelPresentacionEsan');
       if(ep) {
-        ep.setAttribute('position', '1.1 2.82 -15');
+        ep.setAttribute('position', '1.65 2.82 -15');
         ep.removeAttribute('animation__entrar');
-        ep.setAttribute('animation__entrar', 'property: position; from: 1.1 2.82 -15; to: 1.1 2.82 -2.5; dur: 5000; easing: easeOutCubic');
+        ep.setAttribute('animation__entrar', 'property: position; from: 1.65 2.82 -15; to: 1.65 2.82 -2.5; dur: 5000; easing: easeOutCubic');
       }
     }, 100);
 
